@@ -13,11 +13,14 @@
 
 
 </head>
-<body>
+
+</div>
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
 <!-- include -->
 <div id="navbar"></div>
 <div id="sidebar"></div>
-
+ <div class="app-main">
 <div class="topbar">
   <div style="display:flex;align-items:center;gap:12px">
     <span class="topbar-title">Employee Table</span>
@@ -163,16 +166,9 @@
 </div>
 
 <div class="toast-wrap" id="toastWrap"></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  fetch("navbar.html").then(r => r.text()).then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
+ </div>
+    </div>
 
-  fetch("sidebar.html").then(r => r.text()).then(data => {
-    document.getElementById("sidebar").innerHTML = data;
-  });
-</script>
 <script>
 document.getElementById('topDate').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
 const AV_COLORS=['#4F46E5','#10B981','#F59E0B','#EF4444','#8B5CF6','#0EA5E9'];
@@ -310,6 +306,23 @@ function toast(msg,type=''){
   el.innerHTML=`<i class="bi bi-${icon}"></i>${msg}`;wrap.appendChild(el);setTimeout(()=>el.remove(),3000);
 }
 updateEmpStats();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="adminlte.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  Promise.all([
+    fetch("navbar.html").then(r => r.text()),
+    fetch("sidebar.html").then(r => r.text())
+  ]).then(([navbar, sidebar]) => {
+
+    document.getElementById("navbar").innerHTML = navbar;
+    document.getElementById("sidebar").innerHTML = sidebar;
+
+  });
+
+});
 </script>
 </body>
 </html>
