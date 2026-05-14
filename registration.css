@@ -425,7 +425,7 @@ body{
    RESPONSIVE
 ========================= */
 
-@media(max-width:991px){
+@media(max-width:768px){
 
     .section-heading h1{
         font-size:40px;
@@ -484,6 +484,13 @@ body{
     max-width:100%;
     padding:20px;
   }
+
+  body{
+    padding:15px;
+  }
+
+}
+
 
   body{
     padding:15px;
