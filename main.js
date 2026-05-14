@@ -35,7 +35,7 @@ loginForm.addEventListener("submit", function(e){
     alert("Login Successful!");
 
     window.location.href =
-      "https://sangeetha-u1.github.io/Code-Axis-week1/dashboard.html";
+      "dashboard.html";
 
   }
 
