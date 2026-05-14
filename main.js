@@ -33,6 +33,9 @@ const togglePassword = document.getElementById("togglePassword");
 
       alert("Login Successful!");
 
+      window.location.href =
+       "https://sangeetha-u1.github.io/Code-Axis-week1/dashboard/index.html";
+
     }
     
 
