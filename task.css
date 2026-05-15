@@ -9,7 +9,14 @@
   --shadow:0 1px 3px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.04);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);font-family:'Inter',sans-serif;color:var(--text);font-size:14px;padding:32px}
+body{
+  background:var(--bg);
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  font-size:14px;
+  padding:0;   /* ❌ remove 32px */
+}
+
 h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
 
 .day-badge{display:inline-flex;align-items:center;gap:8px;background:var(--warning-l);color:#92400E;border-radius:999px;padding:6px 16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.04em;margin-bottom:18px}
