@@ -182,6 +182,66 @@ function applyFilters(){
 }
 
 applyFilters();
+  
+</script>
+  <!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AdminLTE -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/js/adminlte.min.js"></script>
+
+<!-- YOUR SCRIPT -->
+<script>
+const projects = [
+  {name:"Code Axis Dashboard",desc:"Analytics dashboard",status:"Active",progress:87,tasks:12,due:"Jun 30"},
+  {name:"E-Commerce Portal",desc:"Shopping platform",status:"In Progress",progress:62,tasks:8,due:"Jul 15"},
+  {name:"Mobile App",desc:"UI redesign",status:"Review",progress:95,tasks:5,due:"May 28"},
+  {name:"CRM System",desc:"Salesforce integration",status:"On Hold",progress:35,tasks:14,due:"Aug 1"},
+];
+
+let active="all";
+
+function render(data){
+  document.getElementById("projectGrid").innerHTML =
+  data.map(p=>`
+    <div class="project-card">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+
+      <div class="meta">
+        <span>${p.status}</span>
+        <span>${p.progress}%</span>
+      </div>
+
+      <div class="bar">
+        <div class="fill" style="width:${p.progress}%"></div>
+      </div>
+
+      <div class="bottom">
+        <span>Tasks: ${p.tasks}</span>
+        <span>${p.due}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+function filterCards(status,btn){
+  active=status;
+  document.querySelectorAll(".filter-chip").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  applyFilters();
+}
+
+function applyFilters(){
+  let data = active==="all" ? projects : projects.filter(p=>p.status===active);
+
+  let q=document.getElementById("projectSearch").value.toLowerCase();
+  if(q) data=data.filter(p=>p.name.toLowerCase().includes(q));
+
+  render(data);
+}
+
+applyFilters();
 </script>
 
 </body>
