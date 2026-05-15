@@ -11,18 +11,8 @@
 <link rel="stylesheet" href="employetable.css">
 </head>
 
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<body>
 
-<div class="app-wrapper">
-
-  <!-- NAVBAR (must be first inside wrapper) -->
-  <nav id="navbar"></nav>
-
-  <!-- SIDEBAR (must come right after navbar) -->
-  <aside id="sidebar"></aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="app-main">
 
     <div class="container-fluid">
 
@@ -80,29 +70,6 @@
         </table>
       </div>
 
-    </div>
-
-  </main>
-
 </div>
-
-<!-- BOOTSTRAP -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-/* DATE */
-document.getElementById('topDate').textContent =
-  new Date().toLocaleDateString('en-IN');
-
-/* LOAD COMPONENTS */
-fetch("./navbar.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("navbar").innerHTML = data);
-
-fetch("./sidebar.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("sidebar").innerHTML = data);
-</script>
-
 </body>
 </html>
