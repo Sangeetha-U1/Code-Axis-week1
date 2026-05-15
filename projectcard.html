@@ -270,18 +270,6 @@ function render(data){
   `).join("");
 }
 
-function filterCards(status,btn){
-
-  active = status;
-
-  document
-    .querySelectorAll(".filter-chip")
-    .forEach(b => b.classList.remove("active"));
-
-  btn.classList.add("active");
-
-  applyFilters();
-  function addProject(){
 
   const name = prompt("Enter project name:");
   if(!name) return;
@@ -340,6 +328,53 @@ function applyFilters(){
 }
 
 applyFilters();
+  function filterCards(status,btn){
+
+  active = status;
+
+  document
+    .querySelectorAll(".filter-chip")
+    .forEach(b => b.classList.remove("active"));
+
+  btn.classList.add("active");
+
+  applyFilters();
+}
+
+function addProject(){
+
+  const name = prompt("Enter project name:");
+  if(!name) return;
+
+  const desc = prompt("Enter project description:");
+  if(!desc) return;
+
+  const status = prompt(
+    "Enter status:\nActive\nIn Progress\nReview\nOn Hold"
+  );
+
+  if(!status) return;
+
+  const progress = prompt("Enter progress percentage:");
+  if(!progress) return;
+
+  const tasks = prompt("Enter number of tasks:");
+  if(!tasks) return;
+
+  const due = prompt("Enter due date:");
+  if(!due) return;
+
+  projects.push({
+    name:name,
+    desc:desc,
+    status:status,
+    progress:Number(progress),
+    tasks:Number(tasks),
+    due:due
+  });
+
+  applyFilters();
+}
 
 </script>
 
