@@ -184,6 +184,7 @@
 <script>
 
 const projects = [
+
   {
     name:"Code Axis Dashboard",
     desc:"Analytics dashboard",
@@ -218,7 +219,8 @@ const projects = [
     progress:35,
     tasks:14,
     due:"Aug 1"
-  },
+  }
+
 ];
 
 let active = "all";
@@ -226,6 +228,7 @@ let active = "all";
 function render(data){
 
   document.getElementById("projectGrid").innerHTML =
+
   data.map(p => `
 
     <div class="project-card">
@@ -268,41 +271,21 @@ function render(data){
     </div>
 
   `).join("");
+
 }
 
+function filterCards(status,btn){
 
-  const name = prompt("Enter project name:");
-  if(!name) return;
+  active = status;
 
-  const desc = prompt("Enter project description:");
-  if(!desc) return;
+  document
+    .querySelectorAll(".filter-chip")
+    .forEach(b => b.classList.remove("active"));
 
-  const status = prompt(
-    "Enter status:\nActive\nIn Progress\nReview\nOn Hold"
-  );
-
-  if(!status) return;
-
-  const progress = prompt("Enter progress percentage:");
-  if(!progress) return;
-
-  const tasks = prompt("Enter number of tasks:");
-  if(!tasks) return;
-
-  const due = prompt("Enter due date:");
-  if(!due) return;
-
-  projects.push({
-    name:name,
-    desc:desc,
-    status:status,
-    progress:Number(progress),
-    tasks:Number(tasks),
-    due:due
-  });
+  btn.classList.add("active");
 
   applyFilters();
-}
+
 }
 
 function applyFilters(){
@@ -319,64 +302,57 @@ function applyFilters(){
     .toLowerCase();
 
   if(q){
+
     data = data.filter(p =>
       p.name.toLowerCase().includes(q)
     );
+
   }
 
   render(data);
-}
 
-applyFilters();
-  function filterCards(status,btn){
-
-  active = status;
-
-  document
-    .querySelectorAll(".filter-chip")
-    .forEach(b => b.classList.remove("active"));
-
-  btn.classList.add("active");
-
-  applyFilters();
 }
 
 function addProject(){
 
-  const name = prompt("Enter project name:");
+  const name = prompt("Enter Project Name");
   if(!name) return;
 
-  const desc = prompt("Enter project description:");
+  const desc = prompt("Enter Project Description");
   if(!desc) return;
 
   const status = prompt(
-    "Enter status:\nActive\nIn Progress\nReview\nOn Hold"
+    "Enter Status:\nActive\nIn Progress\nReview\nOn Hold"
   );
 
   if(!status) return;
 
-  const progress = prompt("Enter progress percentage:");
+  const progress = prompt("Enter Progress Percentage");
   if(!progress) return;
 
-  const tasks = prompt("Enter number of tasks:");
+  const tasks = prompt("Enter Number of Tasks");
   if(!tasks) return;
 
-  const due = prompt("Enter due date:");
+  const due = prompt("Enter Due Date");
   if(!due) return;
 
   projects.push({
+
     name:name,
     desc:desc,
     status:status,
     progress:Number(progress),
     tasks:Number(tasks),
     due:due
+
   });
 
   applyFilters();
+
 }
 
-</script>
+applyFilters();
 
+</script>
 </body>
 </html>
