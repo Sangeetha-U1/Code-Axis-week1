@@ -201,10 +201,9 @@
         </div>
         <!--end::Sidebar Wrapper-->
       </aside>
-
-
-
-
+<main class="app-main">
+  <div class="app-content">
+    <div class="container-fluid">
 <div class="page-header">
   <h1 class="page-title">Project Cards</h1>
   <p class="page-sub">Card Grid — Visual overview of all active projects</p>
@@ -229,7 +228,9 @@
 </div>
 
 <div class="projects-grid" id="projectGrid"></div>
-
+    </div>
+  </div>
+</main>
 <script>
 const projects=[
   {id:1,name:'Code Axis Dashboard',desc:'Internal analytics dashboard with real-time stats, employee management, and kanban board.',icon:'bi-bar-chart-fill',iconClass:'ic-indigo',accent:'acc-indigo',status:'Active',statusClass:'cs-active',progress:87,tasks:12,due:'Jun 30',team:['#4F46E5','#10B981','#F59E0B'],progColor:'linear-gradient(90deg,#4F46E5,#818CF8)'},
@@ -281,5 +282,7 @@ applyFilters();
 </script>
  <script src="adminlte.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="adminlte.js"></script>
 </body>
 </html>
