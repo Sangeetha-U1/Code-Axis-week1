@@ -8,7 +8,199 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="task.css">
 </head>
-<body>
+<body  class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+
+<div class="app-wrapper">
+
+  <!-- ================= NAVBAR (STATIC INCLUDE) ================= -->
+  <!-- ================= NAVBAR ================= -->
+<nav class="app-header navbar navbar-expand bg-body">
+
+  <div class="container-fluid">
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" data-lte-toggle="sidebar" href="#">
+          <i class="bi bi-list"></i>
+        </a>
+      </li>
+
+      <!-- SEARCH -->
+      <li class="nav-item d-none d-md-block">
+        <form class="d-flex ms-2">
+          <div class="input-group input-group-sm">
+            <input class="form-control" type="search" placeholder="Search menu..." />
+            <button class="btn btn-primary">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ms-auto">
+
+      <!-- THEME -->
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="themeToggle">
+          <i class="bi bi-moon-fill" id="themeIcon"></i>
+        </a>
+      </li>
+
+      <!-- NOTIFICATIONS -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown">
+          <i class="bi bi-bell-fill"></i>
+          <span class="badge text-bg-warning">5</span>
+        </a>
+      </li>
+
+      <!-- FULLSCREEN -->
+      <li class="nav-item">
+        <a class="nav-link" data-lte-toggle="fullscreen">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </a>
+      </li>
+
+      <!-- USER -->
+      <li class="nav-item dropdown user-menu">
+
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+               class="user-image rounded-circle shadow">
+          <span class="d-none d-md-inline">Admin User</span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li class="user-header text-bg-primary">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                 class="rounded-circle shadow">
+            <p>Admin User</p>
+          </li>
+
+          <li class="user-footer">
+            <a href="index.html" class="btn btn-outline-danger float-end">Logout</a>
+          </li>
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+
+  <div class="sidebar-brand">
+    <a href="index.html" class="brand-link">
+      <img src="AdminLTELogo.png" class="brand-image opacity-75 shadow" />
+      <span class="brand-text fw-semibold">Code Axis</span>
+    </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <nav class="mt-2">
+
+      <ul class="nav sidebar-menu flex-column">
+  <!-- DASHBOARD -->
+  <li class="nav-item">
+    <a href="dashboard.html" class="nav-link active">
+      <i class="nav-icon bi bi-speedometer2"></i>
+      <p>Dashboard</p>
+    </a>
+  </li>
+
+  <!-- EMPLOYEE MANAGEMENT -->
+  <li class="nav-header">EMPLOYEE MANAGEMENT</li>
+
+  <li class="nav-item">
+    <a href="employetable.html" class="nav-link">
+      <i class="nav-icon bi bi-people"></i>
+      <p>Employees</p>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="Attendance.html" class="nav-link">
+      <i class="nav-icon bi bi-calendar-check"></i>
+      <p>Attendance</p>
+    </a>
+  </li>
+
+  <!-- PROJECT MANAGEMENT -->
+  <li class="nav-header">PROJECT MANAGEMENT</li>
+
+  <li class="nav-item">
+    <a href="projectcards.html" class="nav-link">
+      <i class="nav-icon bi bi-kanban"></i>
+      <p>Projects</p>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="task.html" class="nav-link">
+      <i class="nav-icon bi bi-list-task"></i>
+      <p>
+        Tasks
+      </p>
+    </a>
+  </li>
+
+  <!-- REPORTS -->
+  <li class="nav-header">ANALYTICS</li>
+
+  <li class="nav-item">
+    <a href="dasboard-analytics.html" class="nav-link">
+      <i class="nav-icon bi bi-bar-chart"></i>
+      <p>Reports & Analytics</p>
+    </a>
+  </li>
+
+  <!-- NOTIFICATIONS -->
+  <li class="nav-item">
+    <a href="#" class="nav-link">
+      <i class="nav-icon bi bi-bell"></i>
+      <p>
+        Notifications
+      </p>
+    </a>
+  </li>
+
+  <!-- USER -->
+  <li class="nav-header">ACCOUNT</li>
+<li class="nav-item">
+  <a href="index.html" class="nav-link">
+    <i class="nav-icon bi bi-box-arrow-in-right"></i>
+    <p>Login</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="registration.html" class="nav-link">
+    <i class="nav-icon bi bi-person-plus"></i>
+    <p>Register</p>
+  </a>
+</li>
+ 
+  <!-- LOGOUT -->
+  <li class="nav-item mt-3">
+    <a href="index.html" class="nav-link text-danger">
+      <i class="nav-icon bi bi-box-arrow-right"></i>
+      <p>Logout</p>
+    </a>
+  </li>
+</ul>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+
+>
 
 
 <div class="page-header">
