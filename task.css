@@ -76,5 +76,18 @@ h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
   .topbar-title{font-size:.88rem}
   .page{padding:12px}
 }
+@media (max-width: 991px) {
+  .board {
+    align-items: stretch;
+  }
+
+  .col {
+    border-radius: 12px;
+  }
+
+  .task-card:hover {
+    transform: none; /* removes hover jump on touch devices */
+  }
+}
  
 
