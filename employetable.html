@@ -3,491 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>T-11 | Employee Table — Day 11</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<title>Employee Table</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/css/adminlte.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="adminlte.css" />
-    <link rel="stylesheet" href="custom.css"/>   
+
+<link rel="stylesheet" href="custom.css">
 </head>
-<body  class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+
+<body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary">
 
 <div class="app-wrapper">
 
-  <!-- ================= NAVBAR (STATIC INCLUDE) ================= -->
-  <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+
 <nav class="app-header navbar navbar-expand bg-body">
 
-  <div class="container-fluid">
+<div class="container-fluid">
 
-    <ul class="navbar-nav">
+<ul class="navbar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link" data-lte-toggle="sidebar" href="#">
-          <i class="bi bi-list"></i>
-        </a>
-      </li>
+<li class="nav-item">
+<a class="nav-link" data-lte-toggle="sidebar" href="#">
+<i class="bi bi-list"></i>
+</a>
+</li>
 
-      <!-- SEARCH -->
-      <li class="nav-item d-none d-md-block">
-        <form class="d-flex ms-2">
-          <div class="input-group input-group-sm">
-            <input class="form-control" type="search" placeholder="Search menu..." />
-            <button class="btn btn-primary">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
-        </form>
-      </li>
+<li class="nav-item d-none d-md-block">
+<form class="d-flex ms-2">
+<div class="input-group input-group-sm">
+<input class="form-control" type="search" placeholder="Search menu...">
+<button class="btn btn-primary">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</form>
+</li>
 
-    </ul>
+</ul>
 
-    <ul class="navbar-nav ms-auto">
+<ul class="navbar-nav ms-auto">
 
-      <!-- THEME -->
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="themeToggle">
-          <i class="bi bi-moon-fill" id="themeIcon"></i>
-        </a>
-      </li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="bi bi-moon-fill"></i>
+</a>
+</li>
 
-      <!-- NOTIFICATIONS -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-bs-toggle="dropdown">
-          <i class="bi bi-bell-fill"></i>
-          <span class="badge text-bg-warning">5</span>
-        </a>
-      </li>
+<li class="nav-item dropdown">
+<a class="nav-link" data-bs-toggle="dropdown">
+<i class="bi bi-bell-fill"></i>
+<span class="badge text-bg-warning">5</span>
+</a>
+</li>
 
-      <!-- FULLSCREEN -->
-      <li class="nav-item">
-        <a class="nav-link" data-lte-toggle="fullscreen">
-          <i class="bi bi-arrows-fullscreen"></i>
-        </a>
-      </li>
+<li class="nav-item">
+<a class="nav-link" data-lte-toggle="fullscreen">
+<i class="bi bi-arrows-fullscreen"></i>
+</a>
+</li>
 
-      <!-- USER -->
-      <li class="nav-item dropdown user-menu">
+<li class="nav-item dropdown user-menu">
 
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-               class="user-image rounded-circle shadow">
-          <span class="d-none d-md-inline">Admin User</span>
-        </a>
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+class="user-image rounded-circle shadow">
 
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li class="user-header text-bg-primary">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                 class="rounded-circle shadow">
-            <p>Admin User</p>
-          </li>
+<span class="d-none d-md-inline">Admin User</span>
+</a>
 
-          <li class="user-footer">
-            <a href="index.html" class="btn btn-outline-danger float-end">Logout</a>
-          </li>
-        </ul>
+<ul class="dropdown-menu dropdown-menu-end">
 
-      </li>
+<li class="user-header text-bg-primary">
 
-    </ul>
+<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+class="rounded-circle shadow">
 
-  </div>
+<p>Admin User</p>
+
+</li>
+
+<li class="user-footer">
+<a href="index.html" class="btn btn-outline-danger float-end">
+Logout
+</a>
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</div>
 </nav>
 
 <!-- ================= SIDEBAR ================= -->
+
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
 
-  <div class="sidebar-brand">
-    <a href="index.html" class="brand-link">
-      <img src="AdminLTELogo.png" class="brand-image opacity-75 shadow" />
-      <span class="brand-text fw-semibold">Code Axis</span>
-    </a>
-  </div>
+<div class="sidebar-brand">
 
-  <div class="sidebar-wrapper">
-    <nav class="mt-2">
+<a href="index.html" class="brand-link">
 
-      <ul class="nav sidebar-menu flex-column">
-  <!-- DASHBOARD -->
-  <li class="nav-item">
-    <a href="dashboard.html" class="nav-link active">
-      <i class="nav-icon bi bi-speedometer2"></i>
-      <p>Dashboard</p>
-    </a>
-  </li>
+<img src="AdminLTELogo.png"
+class="brand-image opacity-75 shadow">
 
-  <!-- EMPLOYEE MANAGEMENT -->
-  <li class="nav-header">EMPLOYEE MANAGEMENT</li>
+<span class="brand-text fw-semibold">Code Axis</span>
 
-  <li class="nav-item">
-    <a href="employetable.html" class="nav-link">
-      <i class="nav-icon bi bi-people"></i>
-      <p>Employees</p>
-    </a>
-  </li>
+</a>
 
-  <li class="nav-item">
-    <a href="Attendance.html" class="nav-link">
-      <i class="nav-icon bi bi-calendar-check"></i>
-      <p>Attendance</p>
-    </a>
-  </li>
+</div>
 
-  <!-- PROJECT MANAGEMENT -->
-  <li class="nav-header">PROJECT MANAGEMENT</li>
+<div class="sidebar-wrapper">
 
-  <li class="nav-item">
-    <a href="projectcards.html" class="nav-link">
-      <i class="nav-icon bi bi-kanban"></i>
-      <p>Projects</p>
-    </a>
-  </li>
+<nav class="mt-2">
 
-  <li class="nav-item">
-    <a href="task.html" class="nav-link">
-      <i class="nav-icon bi bi-list-task"></i>
-      <p>
-        Tasks
-      </p>
-    </a>
-  </li>
+<ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu">
 
-  <!-- REPORTS -->
-  <li class="nav-header">ANALYTICS</li>
-
-  <li class="nav-item">
-    <a href="dashboard-analytics.html" class="nav-link">
-      <i class="nav-icon bi bi-bar-chart"></i>
-      <p>Reports & Analytics</p>
-    </a>
-  </li>
-
-  <!-- NOTIFICATIONS -->
-  <li class="nav-item">
-    <a href="#" class="nav-link">
-      <i class="nav-icon bi bi-bell"></i>
-      <p>
-        Notifications
-      </p>
-    </a>
-  </li>
-
-  <!-- USER -->
-  <li class="nav-header">ACCOUNT</li>
 <li class="nav-item">
-  <a href="index.html" class="nav-link">
-    <i class="nav-icon bi bi-box-arrow-in-right"></i>
-    <p>Login</p>
-  </a>
+<a href="dashboard.html" class="nav-link active">
+<i class="nav-icon bi bi-speedometer2"></i>
+<p>Dashboard</p>
+</a>
+</li>
+
+<li class="nav-header">EMPLOYEE MANAGEMENT</li>
+
+<li class="nav-item">
+<a href="employetable.html" class="nav-link">
+<i class="nav-icon bi bi-people"></i>
+<p>Employees</p>
+</a>
 </li>
 
 <li class="nav-item">
-  <a href="registration.html" class="nav-link">
-    <i class="nav-icon bi bi-person-plus"></i>
-    <p>Register</p>
-  </a>
+<a href="Attendance.html" class="nav-link">
+<i class="nav-icon bi bi-calendar-check"></i>
+<p>Attendance</p>
+</a>
 </li>
- 
-  <!-- LOGOUT -->
-  <li class="nav-item mt-3">
-    <a href="index.html" class="nav-link text-danger">
-      <i class="nav-icon bi bi-box-arrow-right"></i>
-      <p>Logout</p>
-    </a>
-  </li>
+
+<li class="nav-header">PROJECT MANAGEMENT</li>
+
+<li class="nav-item">
+<a href="projectcards.html" class="nav-link">
+<i class="nav-icon bi bi-kanban"></i>
+<p>Projects</p>
+</a>
+</li>
+
+<li class="nav-item">
+<a href="task.html" class="nav-link">
+<i class="nav-icon bi bi-list-task"></i>
+<p>Tasks</p>
+</a>
+</li>
+
+<li class="nav-header">ANALYTICS</li>
+
+<li class="nav-item">
+<a href="dashboard-analytics.html" class="nav-link">
+<i class="nav-icon bi bi-bar-chart"></i>
+<p>Reports & Analytics</p>
+</a>
+</li>
+
+<li class="nav-item">
+<a href="#" class="nav-link">
+<i class="nav-icon bi bi-bell"></i>
+<p>Notifications</p>
+</a>
+</li>
+
+<li class="nav-header">ACCOUNT</li>
+
+<li class="nav-item">
+<a href="index.html" class="nav-link">
+<i class="nav-icon bi bi-box-arrow-in-right"></i>
+<p>Login</p>
+</a>
+</li>
+
+<li class="nav-item">
+<a href="registration.html" class="nav-link">
+<i class="nav-icon bi bi-person-plus"></i>
+<p>Register</p>
+</a>
+</li>
+
+<li class="nav-item mt-3">
+<a href="index.html" class="nav-link text-danger">
+<i class="nav-icon bi bi-box-arrow-right"></i>
+<p>Logout</p>
+</a>
+</li>
+
 </ul>
-            <!--end::Sidebar Menu-->
-          </nav>
-        </div>
-        <!--end::Sidebar Wrapper-->
-      </aside>
 
->
+</nav>
 
-<div class="topbar">
-  <div style="display:flex;align-items:center;gap:12px">
-    <span class="topbar-title">Employee Table</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <span style="font-size:.72rem;color:var(--muted)" id="topDate"></span>
-    <span class="day-badge"><i class="bi bi-calendar3"></i> Day 11 · T-11 · Raghuram</span>
-  </div>
 </div>
 
-<div class="page">
-  <div class="stats-row">
-    <div class="stat-card"><div class="stat-icon" style="background:var(--primary-l);color:var(--primary)"><i class="bi bi-people-fill"></i></div><div><div class="stat-val" id="sc-total">3</div><div class="stat-lbl">Total Employees</div></div></div>
-    <div class="stat-card"><div class="stat-icon" style="background:var(--success-l);color:var(--success)"><i class="bi bi-check-circle-fill"></i></div><div><div class="stat-val" id="sc-active">1</div><div class="stat-lbl">Active</div></div></div>
-    <div class="stat-card"><div class="stat-icon" style="background:var(--primary-l);color:var(--primary)"><i class="bi bi-arrow-repeat"></i></div><div><div class="stat-val" id="sc-working">1</div><div class="stat-lbl">Working</div></div></div>
-    <div class="stat-card"><div class="stat-icon" style="background:var(--warning-l);color:var(--warning)"><i class="bi bi-clock-fill"></i></div><div><div class="stat-val" id="sc-pending">1</div><div class="stat-lbl">Pending</div></div></div>
-  </div>
+</aside>
 
-  <div class="card-box">
-    <div class="section-header">
-      <div class="section-title">Employee Table</div>
-      <div class="d-flex gap-2 flex-wrap">
-        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#employeeModal"><i class="bi bi-plus-circle"></i> Add Employee</button>
-        <button class="btn btn-warning btn-sm" onclick="openEditEmpModal()"><i class="bi bi-pencil-square"></i> Edit Employee</button>
-      </div>
-    </div>
-    <div class="row g-2 mb-4">
-      <div class="col-md-5"><input type="text" id="empSearch" class="form-control" placeholder="🔍  Search employee..."></div>
-      <div class="col-md-3">
-        <select id="empDeptFilter" class="form-select">
-          <option value="all">All Departments</option>
-          <option value="ui design">UI Design</option>
-          <option value="frontend">Frontend</option>
-          <option value="backend">Backend</option>
-          <option value="developer">Developer</option>
-        </select>
-      </div>
-      <div class="col-md-4">
-        <select id="empStatusFilter" class="form-select">
-          <option value="all">All Status</option>
-          <option value="active">Active</option>
-          <option value="working">Working</option>
-          <option value="pending">Pending</option>
-        </select>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <table class="table align-middle">
-        <thead><tr><th>#</th><th>Employee</th><th class="emp-col-dept">Department</th><th>Status</th><th class="emp-col-email">Email</th><th>Actions</th></tr></thead>
-        <tbody id="empTableBody">
-          <tr data-name="sangeetha" data-dept="ui design" data-status="active">
-            <td style="color:var(--muted);font-size:.8rem">01</td>
-            <td><div class="emp-cell"><div class="emp-avatar" style="background:#4F46E5">SA</div><div class="emp-name">Sangeetha</div></div></td>
-            <td class="emp-col-dept">UI Design</td>
-            <td><span class="status-badge badge-active">Active</span></td>
-            <td class="emp-col-email">sangeetha@gmail.com</td>
-            <td class="d-flex gap-1">
-              <button class="action-btn" onclick="viewEmpRow(this)" title="View"><i class="bi bi-eye"></i></button>
-              <button class="action-btn" onclick="editEmpRow(this)" title="Edit"><i class="bi bi-pencil"></i></button>
-              <button class="action-btn danger" onclick="deleteEmpRow(this)" title="Delete"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-          <tr data-name="praveen" data-dept="frontend" data-status="working">
-            <td style="color:var(--muted);font-size:.8rem">02</td>
-            <td><div class="emp-cell"><div class="emp-avatar" style="background:#10B981">PR</div><div class="emp-name">Praveen</div></div></td>
-            <td class="emp-col-dept">Frontend</td>
-            <td><span class="status-badge badge-working">Working</span></td>
-            <td class="emp-col-email">praveen@gmail.com</td>
-            <td class="d-flex gap-1">
-              <button class="action-btn" onclick="viewEmpRow(this)" title="View"><i class="bi bi-eye"></i></button>
-              <button class="action-btn" onclick="editEmpRow(this)" title="Edit"><i class="bi bi-pencil"></i></button>
-              <button class="action-btn danger" onclick="deleteEmpRow(this)" title="Delete"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-          <tr data-name="raghuram" data-dept="developer" data-status="pending">
-            <td style="color:var(--muted);font-size:.8rem">03</td>
-            <td><div class="emp-cell"><div class="emp-avatar" style="background:#F59E0B">RK</div><div class="emp-name">Raghuram</div></div></td>
-            <td class="emp-col-dept">Developer</td>
-            <td><span class="status-badge badge-pending">Pending</span></td>
-            <td class="emp-col-email">raghu@gmail.com</td>
-            <td class="d-flex gap-1">
-              <button class="action-btn" onclick="viewEmpRow(this)" title="View"><i class="bi bi-eye"></i></button>
-              <button class="action-btn" onclick="editEmpRow(this)" title="Edit"><i class="bi bi-pencil"></i></button>
-              <button class="action-btn danger" onclick="deleteEmpRow(this)" title="Delete"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="app-main">
+
+<div class="app-content">
+
+<div class="container-fluid py-4">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h3 class="fw-bold">Employee Table</h3>
+
+<div class="d-flex gap-2">
+
+<button class="btn btn-primary btn-sm">
+<i class="bi bi-plus-circle"></i>
+Add Employee
+</button>
+
+<button class="btn btn-warning btn-sm">
+<i class="bi bi-pencil-square"></i>
+Edit Employee
+</button>
+
 </div>
 
-<!-- ADD MODAL -->
-<div class="modal fade" id="employeeModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header"><h5 class="modal-title"><i class="bi bi-person-plus me-2 text-primary"></i>Add Employee</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label">Full Name</label><input type="text" id="newEmpName" class="form-control" placeholder="e.g. Ananya Reddy"></div>
-        <div class="mb-3"><label class="form-label">Email Address</label><input type="email" id="newEmpEmail" class="form-control" placeholder="email@company.com"></div>
-        <div class="mb-3"><label class="form-label">Department</label>
-          <select id="newEmpDept" class="form-select"><option value="ui design">UI Design</option><option value="frontend">Frontend</option><option value="backend">Backend</option><option value="developer">Developer</option></select>
-        </div>
-        <div><label class="form-label">Status</label>
-          <select id="newEmpStatus" class="form-select"><option value="active">Active</option><option value="working">Working</option><option value="pending">Pending</option></select>
-        </div>
-      </div>
-      <div class="modal-footer"><button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary btn-sm" onclick="addEmployee()"><i class="bi bi-plus"></i> Add Employee</button></div>
-    </div>
-  </div>
 </div>
 
-<!-- EDIT MODAL -->
-<div class="modal fade" id="editEmpModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header"><h5 class="modal-title"><i class="bi bi-pencil-square me-2 text-warning"></i>Edit Employee</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label">Select Employee</label><select id="editEmpSelect" class="form-select" onchange="fillEditEmpForm()"><option value="">— Select Employee —</option></select></div>
-        <div class="mb-3"><label class="form-label">Full Name</label><input type="text" id="editEmpName" class="form-control" placeholder="Full Name"></div>
-        <div class="mb-3"><label class="form-label">Email Address</label><input type="email" id="editEmpEmail" class="form-control" placeholder="Email"></div>
-        <div class="mb-3"><label class="form-label">Department</label>
-          <select id="editEmpDept" class="form-select"><option value="ui design">UI Design</option><option value="frontend">Frontend</option><option value="backend">Backend</option><option value="developer">Developer</option></select>
-        </div>
-        <div><label class="form-label">Status</label>
-          <select id="editEmpStatus" class="form-select"><option value="active">Active</option><option value="working">Working</option><option value="pending">Pending</option></select>
-        </div>
-      </div>
-      <div class="modal-footer"><button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancel</button><button class="btn btn-warning btn-sm" onclick="updateEmployee()"><i class="bi bi-check2"></i> Update</button></div>
-    </div>
-  </div>
+<div class="row mb-4">
+
+<div class="col-md-3">
+<div class="small-box text-bg-primary">
+<div class="inner">
+<h3>3</h3>
+<p>Total Employees</p>
+</div>
+<div class="small-box-icon">
+<i class="bi bi-people-fill"></i>
+</div>
+</div>
 </div>
 
-<!-- VIEW MODAL -->
-<div class="modal fade" id="viewEmpModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-sm">
-    <div class="modal-content">
-      <div class="modal-header"><h5 class="modal-title"><i class="bi bi-person me-2 text-primary"></i>Employee Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body" id="viewEmpBody"></div>
-      <div class="modal-footer"><button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
-    </div>
-  </div>
+<div class="col-md-3">
+<div class="small-box text-bg-success">
+<div class="inner">
+<h3>1</h3>
+<p>Active</p>
+</div>
+<div class="small-box-icon">
+<i class="bi bi-check-circle-fill"></i>
+</div>
+</div>
 </div>
 
-<div class="toast-wrap" id="toastWrap"></div>
+<div class="col-md-3">
+<div class="small-box text-bg-warning">
+<div class="inner">
+<h3>1</h3>
+<p>Working</p>
+</div>
+<div class="small-box-icon">
+<i class="bi bi-arrow-repeat"></i>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="small-box text-bg-danger">
+<div class="inner">
+<h3>1</h3>
+<p>Pending</p>
+</div>
+<div class="small-box-icon">
+<i class="bi bi-clock-fill"></i>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+<h3 class="card-title">Employee Table</h3>
+</div>
+
+<div class="card-body">
+
+<div class="row mb-3">
+
+<div class="col-md-4">
+<input type="text" class="form-control" placeholder="Search employee...">
+</div>
+
+<div class="col-md-4">
+<select class="form-select">
+<option>All Departments</option>
+<option>UI Design</option>
+<option>Frontend</option>
+<option>Backend</option>
+<option>Developer</option>
+</select>
+</div>
+
+<div class="col-md-4">
+<select class="form-select">
+<option>All Status</option>
+<option>Active</option>
+<option>Working</option>
+<option>Pending</option>
+</select>
+</div>
+
+</div>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-light">
+
+<tr>
+<th>#</th>
+<th>Employee</th>
+<th>Department</th>
+<th>Status</th>
+<th>Email</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>01</td>
+
+<td>
+<div class="d-flex align-items-center gap-2">
+<div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+style="width:40px;height:40px;">
+SA
+</div>
+Sangeetha
+</div>
+</td>
+
+<td>UI Design</td>
+
+<td>
+<span class="badge bg-success">Active</span>
+</td>
+
+<td>sangeetha@gmail.com</td>
+
+<td class="d-flex gap-1">
+
+<button class="btn btn-sm btn-info">
+<i class="bi bi-eye"></i>
+</button>
+
+<button class="btn btn-sm btn-warning">
+<i class="bi bi-pencil"></i>
+</button>
+
+<button class="btn btn-sm btn-danger">
+<i class="bi bi-trash"></i>
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>02</td>
+
+<td>
+<div class="d-flex align-items-center gap-2">
+<div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
+style="width:40px;height:40px;">
+PR
+</div>
+Praveen
+</div>
+</td>
+
+<td>Frontend</td>
+
+<td>
+<span class="badge bg-warning">Working</span>
+</td>
+
+<td>praveen@gmail.com</td>
+
+<td class="d-flex gap-1">
+
+<button class="btn btn-sm btn-info">
+<i class="bi bi-eye"></i>
+</button>
+
+<button class="btn btn-sm btn-warning">
+<i class="bi bi-pencil"></i>
+</button>
+
+<button class="btn btn-sm btn-danger">
+<i class="bi bi-trash"></i>
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>03</td>
+
+<td>
+<div class="d-flex align-items-center gap-2">
+<div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center"
+style="width:40px;height:40px;">
+RK
+</div>
+Raghuram
+</div>
+</td>
+
+<td>Developer</td>
+
+<td>
+<span class="badge bg-danger">Pending</span>
+</td>
+
+<td>raghu@gmail.com</td>
+
+<td class="d-flex gap-1">
+
+<button class="btn btn-sm btn-info">
+<i class="bi bi-eye"></i>
+</button>
+
+<button class="btn btn-sm btn-warning">
+<i class="bi bi-pencil"></i>
+</button>
+
+<button class="btn btn-sm btn-danger">
+<i class="bi bi-trash"></i>
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.getElementById('topDate').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
-const AV_COLORS=['#4F46E5','#10B981','#F59E0B','#EF4444','#8B5CF6','#0EA5E9'];
-let empRowIndex=3;
-function filterEmpTable(){
-  const q=document.getElementById('empSearch').value.toLowerCase();
-  const df=document.getElementById('empDeptFilter').value;
-  const sf=document.getElementById('empStatusFilter').value;
-  document.querySelectorAll('#empTableBody tr').forEach(r=>{
-    const match=r.dataset.name.includes(q)&&(df==='all'||r.dataset.dept===df)&&(sf==='all'||r.dataset.status===sf);
-    r.style.display=match?'':'none';
-  });
-  updateEmpStats();
-}
-document.getElementById('empSearch').addEventListener('input',filterEmpTable);
-document.getElementById('empDeptFilter').addEventListener('change',filterEmpTable);
-document.getElementById('empStatusFilter').addEventListener('change',filterEmpTable);
-function updateEmpStats(){
-  const rows=document.querySelectorAll('#empTableBody tr');
-  let total=0,active=0,working=0,pending=0;
-  rows.forEach(r=>{if(r.style.display==='none')return;total++;if(r.dataset.status==='active')active++;if(r.dataset.status==='working')working++;if(r.dataset.status==='pending')pending++;});
-  document.getElementById('sc-total').textContent=total;
-  document.getElementById('sc-active').textContent=active;
-  document.getElementById('sc-working').textContent=working;
-  document.getElementById('sc-pending').textContent=pending;
-}
-function getBadgeClass(s){return s==='active'?'badge-active':s==='working'?'badge-working':'badge-pending';}
-function capitalise(s){return s.charAt(0).toUpperCase()+s.slice(1);}
-function getInitials(n){return n.trim().split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();}
-function randColor(n){return AV_COLORS[n.charCodeAt(0)%AV_COLORS.length];}
-function addEmployee(){
-  const name=document.getElementById('newEmpName').value.trim();
-  const email=document.getElementById('newEmpEmail').value.trim();
-  const dept=document.getElementById('newEmpDept').value;
-  const status=document.getElementById('newEmpStatus').value;
-  if(!name||!email){toast('Please fill all fields','t-warning');return;}
-  empRowIndex++;
-  const row=document.createElement('tr');
-  row.dataset.name=name.toLowerCase();row.dataset.dept=dept;row.dataset.status=status;
-  row.innerHTML=`
-    <td style="color:var(--muted);font-size:.8rem">${String(empRowIndex).padStart(2,'0')}</td>
-    <td><div class="emp-cell"><div class="emp-avatar" style="background:${randColor(name)}">${getInitials(name)}</div><div class="emp-name">${name}</div></div></td>
-    <td class="emp-col-dept">${capitalise(dept)}</td>
-    <td><span class="status-badge ${getBadgeClass(status)}">${capitalise(status)}</span></td>
-    <td class="emp-col-email">${email}</td>
-    <td class="d-flex gap-1">
-      <button class="action-btn" onclick="viewEmpRow(this)" title="View"><i class="bi bi-eye"></i></button>
-      <button class="action-btn" onclick="editEmpRow(this)" title="Edit"><i class="bi bi-pencil"></i></button>
-      <button class="action-btn danger" onclick="deleteEmpRow(this)" title="Delete"><i class="bi bi-trash"></i></button>
-    </td>`;
-  document.getElementById('empTableBody').appendChild(row);
-  document.getElementById('newEmpName').value='';document.getElementById('newEmpEmail').value='';
-  bootstrap.Modal.getInstance(document.getElementById('employeeModal')).hide();
-  updateEmpStats();toast('Employee added','t-success');
-}
-function viewEmpRow(btn){
-  const r=btn.closest('tr');
-  const name=r.querySelector('.emp-name').textContent.trim();
-  const dept=r.cells[2].innerText.trim();
-  const statusHtml=r.cells[3].innerHTML;
-  const email=r.cells[4].innerText.trim();
-  document.getElementById('viewEmpBody').innerHTML=`
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-        <div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#4F46E5,#6366F1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;font-weight:700;font-family:'Poppins',sans-serif">${getInitials(name)}</div>
-        <div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem">${name}</div><div style="font-size:.76rem;color:var(--muted)">${dept}</div></div>
-      </div>
-      <div style="background:var(--bg);border-radius:9px;padding:10px 13px;border:1px solid var(--border)">
-        <div style="font-size:.65rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;font-family:'Poppins',sans-serif">Email</div>
-        <div style="font-size:.86rem;font-weight:500">${email}</div>
-      </div>
-      <div style="background:var(--bg);border-radius:9px;padding:10px 13px;border:1px solid var(--border)">
-        <div style="font-size:.65rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;font-family:'Poppins',sans-serif">Status</div>${statusHtml}
-      </div>
-    </div>`;
-  new bootstrap.Modal(document.getElementById('viewEmpModal')).show();
-}
-function editEmpRow(btn){
-  const row=btn.closest('tr');
-  const name=row.querySelector('.emp-name').textContent.trim();
-  const dept=row.dataset.dept,status=row.dataset.status,email=row.cells[4].innerText.trim();
-  const n=prompt('Edit Name',name);const d2=prompt('Edit Dept (ui design/frontend/backend/developer)',dept);
-  const s=prompt('Edit Status (active/working/pending)',status);const e=prompt('Edit Email',email);
-  if(!n||!d2||!s||!e){toast('Update cancelled','t-warning');return;}
-  updateEmpRowData(row,n,d2,s,e);toast('Employee updated','t-success');
-}
-function deleteEmpRow(btn){
-  const row=btn.closest('tr');
-  const name=row.querySelector('.emp-name').textContent.trim();
-  if(!confirm('Delete '+name+'?'))return;
-  row.remove();updateEmpStats();toast('Employee deleted','t-danger');
-}
-let selectedEmpRow=null;
-function openEditEmpModal(){
-  const rows=document.querySelectorAll('#empTableBody tr');
-  const sel=document.getElementById('editEmpSelect');
-  sel.innerHTML='<option value="">— Select Employee —</option>';
-  rows.forEach((r,i)=>{sel.innerHTML+=`<option value="${i}">${r.querySelector('.emp-name').textContent.trim()}</option>`;});
-  selectedEmpRow=null;
-  new bootstrap.Modal(document.getElementById('editEmpModal')).show();
-}
-function fillEditEmpForm(){
-  const idx=document.getElementById('editEmpSelect').value;
-  const rows=document.querySelectorAll('#empTableBody tr');
-  selectedEmpRow=rows[idx]||null;
-  if(!selectedEmpRow)return;
-  document.getElementById('editEmpName').value=selectedEmpRow.querySelector('.emp-name').textContent.trim();
-  document.getElementById('editEmpEmail').value=selectedEmpRow.cells[4].innerText.trim();
-  document.getElementById('editEmpDept').value=selectedEmpRow.dataset.dept;
-  document.getElementById('editEmpStatus').value=selectedEmpRow.dataset.status;
-}
-function updateEmployee(){
-  if(!selectedEmpRow){toast('Select an employee first','t-warning');return;}
-  const n=document.getElementById('editEmpName').value.trim();
-  const e=document.getElementById('editEmpEmail').value.trim();
-  const d2=document.getElementById('editEmpDept').value;
-  const s=document.getElementById('editEmpStatus').value;
-  if(!n||!e){toast('Fill all fields','t-warning');return;}
-  updateEmpRowData(selectedEmpRow,n,d2,s,e);
-  bootstrap.Modal.getInstance(document.getElementById('editEmpModal')).hide();
-  toast('Employee updated','t-success');
-}
-function updateEmpRowData(row,name,dept,status,email){
-  row.dataset.name=name.toLowerCase();row.dataset.dept=dept;row.dataset.status=status;
-  row.querySelector('.emp-name').textContent=name;
-  row.querySelector('.emp-avatar').textContent=getInitials(name);
-  row.cells[2].innerText=capitalise(dept);
-  row.cells[3].innerHTML=`<span class="status-badge ${getBadgeClass(status)}">${capitalise(status)}</span>`;
-  row.cells[4].innerText=email;filterEmpTable();
-}
-function toast(msg,type=''){
-  const wrap=document.getElementById('toastWrap');
-  const el=document.createElement('div');el.className='toast-item '+(type||'');
-  const icon=type==='t-success'?'check-circle-fill':type==='t-danger'?'x-circle-fill':'info-circle-fill';
-  el.innerHTML=`<i class="bi bi-${icon}"></i>${msg}`;wrap.appendChild(el);setTimeout(()=>el.remove(),3000);
-}
-updateEmpStats();
-</script>
-    <script src="adminlte.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/js/adminlte.min.js"></script>
+
 </body>
 </html>
