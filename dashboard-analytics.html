@@ -132,23 +132,36 @@
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
   <!-- LOAD NAVBAR + SIDEBAR -->
-  <script>
-    Promise.all([
-      fetch("navbar.html").then(res => res.text()),
-      fetch("sidebar.html").then(res => res.text())
-    ])
-      .then(([navbar, sidebar]) => {
+ <script>
+Promise.all([
+  fetch("navbar.html").then(res => res.text()),
+  fetch("sidebar.html").then(res => res.text())
+])
+.then(([navbar, sidebar]) => {
 
-        document.getElementById("navbar-container").innerHTML = navbar;
-        document.getElementById("sidebar-container").innerHTML = sidebar;
+  document.getElementById("navbar-container").innerHTML = navbar;
+  document.getElementById("sidebar-container").innerHTML = sidebar;
 
-        // load custom.js AFTER components loaded
-        const script = document.createElement("script");
-        script.src = "custom.js";
-        document.body.appendChild(script);
+  // IMPORTANT: wait DOM update then re-init AdminLTE
+  setTimeout(() => {
 
-      });
-  </script>
+    // re-trigger AdminLTE layout system
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+
+    // fix sidebar treeview (important for menu click behavior)
+    if (window.$ && $.fn.Treeview) {
+      $('[data-lte-toggle="treeview"]').Treeview();
+    }
+
+  }, 50);
+
+  // load custom.js AFTER everything
+  const script = document.createElement("script");
+  script.src = "custom.js";
+  document.body.appendChild(script);
+
+});
+</script>
 
   <!-- CHARTS -->
   <script>
