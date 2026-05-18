@@ -203,7 +203,7 @@
       </aside>
 
 
-
+<main class="app-main">
 
 <div class="page-header">
   <div>
@@ -213,7 +213,7 @@
 </div>
 
 <div class="board" id="board"></div>
-
+</main>
 <script>
 const COLS={
   Todo:     {dot:'#94A3B8',color:'#64748B',bg:'#F1F3F9',countBg:'#E2E8F0',countColor:'#475569'},
@@ -336,8 +336,16 @@ function deleteEditTask(){
 }
 </script>
 <!-- Edit Task Modal -->
-<div id="editTaskModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:9999;display:flex;align-items:center;justify-content:center" onclick="if(event.target===this)closeEditModal()">
-  <div style="background:#fff;border-radius:16px;padding:24px;width:420px;max-width:95vw;box-shadow:0 16px 48px rgba(15,23,42,.18);border:1px solid var(--border)">
+    <div id="editTaskModal"
+     style="display:none;
+     position:fixed;
+     inset:0;
+     background:rgba(15,23,42,.45);
+     z-index:9999;
+     align-items:center;
+     justify-content:center"
+     onclick="if(event.target===this)closeEditModal()">
+ <div style="background:#fff;border-radius:16px;padding:24px;width:420px;max-width:95vw;box-shadow:0 16px 48px rgba(15,23,42,.18);border:1px solid var(--border)">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
       <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem">Edit Task</div>
       <button onclick="closeEditModal()" style="border:none;background:transparent;font-size:1.1rem;color:var(--muted);cursor:pointer;line-height:1">✕</button>
