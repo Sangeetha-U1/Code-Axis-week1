@@ -18,7 +18,7 @@
 }
 
 body{
-    font-family:'Inter',sans-serif;
+    font-family:'Inter',poppins;
     background:linear-gradient(135deg,#EEF2FF,#F9FAFB);
     min-height:100vh;
     overflow-x:hidden;
