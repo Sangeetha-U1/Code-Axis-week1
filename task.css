@@ -76,17 +76,26 @@ h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
   .topbar-title{font-size:.88rem}
   .page{padding:12px}
 }
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
+  body { padding: 24px; }
+
   .board {
-    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 
   .col {
-    border-radius: 12px;
+    padding: 13px;
+    min-height: 280px;
   }
 
-  .task-card:hover {
-    transform: none; /* removes hover jump on touch devices */
+  .page-title { font-size: 1.6rem; }
+
+  .task-card { padding: 12px; }
+
+  .btn-primary {
+    padding: 7px 15px;
+    font-size: 0.78rem;
   }
 }
  
