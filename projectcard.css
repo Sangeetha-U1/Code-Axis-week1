@@ -13,7 +13,23 @@
   --shadow-lg:0 8px 32px rgba(15,23,42,.12),0 2px 8px rgba(15,23,42,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);font-family:'Inter',sans-serif;color:var(--text);font-size:14px;padding:32px}
+body{
+  background:var(--bg);
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  font-size:14px;
+  margin:0;
+  padding:0;
+}
+.app-wrapper,
+.app-main,
+.app-content,
+.container-fluid{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:0;
+}
 h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
 
 .day-badge{display:inline-flex;align-items:center;gap:8px;background:var(--sky-l);color:var(--sky);border-radius:999px;padding:6px 16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.04em;margin-bottom:18px}
@@ -90,7 +106,6 @@ h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
   .topbar-title{font-size:.88rem}
   .page{padding:12px}
 }
- VE ── */
   @media (max-width: 1100px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .main-grid { grid-template-columns: 1fr; }
