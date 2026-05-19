@@ -1,59 +1,65 @@
+/* =========================
+   ROOT
+========================= */
 :root{
-  --primary:#4F46E5;--primary-l:#EEF2FF;--primary-m:#6366F1;
-  --success:#10B981;--success-l:#D1FAE5;
-  --warning:#F59E0B;--warning-l:#FEF3C7;
-  --danger:#EF4444;--danger-l:#FEE2E2;
-  --bg:#F0F2F8;--card:#fff;--border:#E8EAF0;
-  --text:#0F172A;--muted:#64748B;--muted-l:#94A3B8;
+  --primary:#4F46E5;
+  --primary-m:#6366F1;
+  --bg:#F0F2F8;
+  --text:#0F172A;
+  --muted:#64748B;
+  --border:#E8EAF0;
   --shadow:0 1px 3px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.04);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  background:var(--bg);
-  font-family:'Inter',sans-serif;
-  color:var(--text);
-  font-size:14px;
+/* =========================
+   RESET
+========================= */
+*{
   margin:0;
   padding:0;
-  width:100%;
-  height:100%;
+  box-sizing:border-box;
 }
 
-/* ========================= */
-/* ✅ SIDEBAR FIX (ADD THIS)  */
-/* ========================= */
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
+/* =========================
+   LAYOUT WRAPPER
+========================= */
 .app-wrapper{
   display:flex;
   min-height:100vh;
   width:100%;
 }
 
-/* SHOW SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 .app-sidebar{
   width:260px;
-  min-height:100vh;
   background:#111827;
   color:#fff;
   flex-shrink:0;
-  display:block;
-  position:relative;
-  z-index:10;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  padding:15px;
 }
 
-/* sidebar links */
 .app-sidebar a{
   display:flex;
   align-items:center;
   gap:10px;
+  padding:10px 12px;
   color:#cbd5e1;
   text-decoration:none;
-  padding:10px 12px;
   border-radius:8px;
   margin-bottom:6px;
-  font-size:14px;
+  transition:0.2s;
 }
 
 .app-sidebar a:hover{
@@ -61,95 +67,105 @@ body{
   color:#fff;
 }
 
-/* MAIN AREA */
+/* =========================
+   MAIN CONTENT
+========================= */
 .app-main{
   flex:1;
   min-width:0;
   padding:20px;
 }
 
-/* ========================= */
-/* YOUR ORIGINAL CSS BELOW   */
-/* ========================= */
+/* =========================
+   NAVBAR (your top bar)
+========================= */
+.app-header{
+  width:100%;
+  background:#fff;
+  padding:10px 20px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
+/* =========================
+   PAGE HEADER
+========================= */
+.page-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:20px 0;
+}
 
-.day-badge{display:inline-flex;align-items:center;gap:8px;background:var(--warning-l);color:#92400E;border-radius:999px;padding:6px 16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.04em;margin-bottom:18px}
+.page-title{
+  font-size:1.6rem;
+  font-weight:800;
+}
 
-.page-header{margin-bottom:24px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
-.page-title{font-size:1.7rem;font-weight:800;color:var(--text);letter-spacing:-.5px}
-.page-sub{color:var(--muted);font-size:.875rem;margin-top:4px}
-
+/* =========================
+   BUTTON
+========================= */
 .btn-primary{
   background:linear-gradient(135deg,var(--primary),var(--primary-m));
-  color:#fff;border:none;border-radius:10px;
-  padding:8px 16px;
-  font-family:'Poppins',sans-serif;
-  font-weight:600;
-  font-size:.8rem;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
   cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  transition:all .18s;
-  box-shadow:0 2px 8px rgba(79,70,229,.2)
+  font-weight:600;
 }
-.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
 
-/* BOARD */
+/* =========================
+   BOARD (TASK AREA)
+========================= */
 .board{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
-  overflow-x:auto;
-  padding-bottom:8px;
-}
-
-@media(max-width:900px){
-  .board{grid-template-columns:repeat(2,1fr)}
-}
-
-@media(max-width:540px){
-  .board{grid-template-columns:1fr}
 }
 
 .col{
-  background:#E8EBF4;
-  border-radius:14px;
+  background:#fff;
+  border-radius:12px;
   padding:14px;
   min-height:300px;
+  box-shadow:var(--shadow);
 }
 
-/* CARD */
+/* =========================
+   TASK CARD
+========================= */
 .task-card{
   background:#fff;
-  border-radius:11px;
-  padding:13px;
-  margin-bottom:9px;
-  box-shadow:var(--shadow);
   border:1px solid var(--border);
-  cursor:pointer;
-  transition:all .2s;
-  position:relative;
-  overflow:hidden;
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+  box-shadow:var(--shadow);
 }
 
-.task-card:hover{
-  box-shadow:0 4px 16px rgba(79,70,229,.12);
-  transform:translateY(-1px);
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:1024px){
+  .board{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-/* PRIORITY */
-.pb-high{background:var(--danger-l);color:#B91C1C}
-.pb-medium{background:var(--warning-l);color:#92400E}
-.pb-low{background:var(--success-l);color:#065F46}
-
-/* RESPONSIVE */
 @media(max-width:768px){
-  .board{grid-template-columns:repeat(2,1fr)}
-  body{padding:16px}
-}
+  .app-wrapper{
+    flex-direction:column;
+  }
 
-@media(max-width:540px){
-  .board{grid-template-columns:1fr}
+  .app-sidebar{
+    width:100%;
+    min-height:auto;
+  }
+
+  .board{
+    grid-template-columns:1fr;
+  }
 }
