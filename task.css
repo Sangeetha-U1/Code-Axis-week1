@@ -76,27 +76,9 @@ h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
   .topbar-title{font-size:.88rem}
   .page{padding:12px}
 }
-@media (max-width: 1199px) {
-  body { padding: 24px; }
-
-  .board {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+VE ── */
+  @media (max-width: 1100px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .main-grid { grid-template-columns: 1fr; }
   }
-
-  .col {
-    padding: 13px;
-    min-height: 280px;
-  }
-
-  .page-title { font-size: 1.6rem; }
-
-  .task-card { padding: 12px; }
-
-  .btn-primary {
-    padding: 7px 15px;
-    font-size: 0.78rem;
-  }
-}
- 
 
