@@ -98,4 +98,14 @@ h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
     font-size: 0.78rem;
   }
 }
- 
+ /* Large desktop (default) */
+.board {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Medium desktop / small laptop */
+@media (max-width: 1400px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
