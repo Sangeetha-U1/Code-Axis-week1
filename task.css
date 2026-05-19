@@ -1,171 +1,189 @@
-/* =========================
-   ROOT
-========================= */
 :root{
-  --primary:#4F46E5;
-  --primary-m:#6366F1;
-  --bg:#F0F2F8;
-  --text:#0F172A;
-  --muted:#64748B;
-  --border:#E8EAF0;
+  --primary:#4F46E5;--primary-l:#EEF2FF;--primary-m:#6366F1;
+  --success:#10B981;--success-l:#D1FAE5;
+  --warning:#F59E0B;--warning-l:#FEF3C7;
+  --danger:#EF4444;--danger-l:#FEE2E2;
+  --bg:#F0F2F8;--card:#fff;--border:#E8EAF0;
+  --text:#0F172A;--muted:#64748B;--muted-l:#94A3B8;
   --shadow:0 1px 3px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.04);
 }
 
-/* =========================
-   RESET
-========================= */
+/* ================= RESET ================= */
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 body{
-  font-family:'Inter',sans-serif;
   background:var(--bg);
+  font-family:'Inter',sans-serif;
   color:var(--text);
+  font-size:14px;
   overflow-x:hidden;
 }
 
-/* =========================
-   LAYOUT WRAPPER
-========================= */
+/* ================= LAYOUT FIX ================= */
+
+/* Wrapper */
 .app-wrapper{
   display:flex;
   min-height:100vh;
   width:100%;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 .app-sidebar{
   width:260px;
-  background:#111827;
-  color:#fff;
-  flex-shrink:0;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  padding:15px;
-}
-
-.app-sidebar a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  color:#cbd5e1;
-  text-decoration:none;
-  border-radius:8px;
-  margin-bottom:6px;
-  transition:0.2s;
-}
-
-.app-sidebar a:hover{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
   background:#1f2937;
   color:#fff;
+  z-index:1000;
+  overflow-y:auto;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* MAIN AREA */
 .app-main{
-  flex:1;
-  min-width:0;
+  margin-left:260px;
+  width:calc(100% - 260px);
   padding:20px;
+  margin-top:60px; /* space for navbar */
 }
 
-/* =========================
-   NAVBAR (your top bar)
-========================= */
+/* NAVBAR FIX */
 .app-header{
-  width:100%;
+  position:fixed;
+  top:0;
+  left:260px;
+  right:0;
+  height:60px;
+  z-index:1100;
   background:#fff;
-  padding:10px 20px;
-  border-bottom:1px solid var(--border);
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* =========================
-   PAGE HEADER
-========================= */
+/* ================= TYPO ================= */
+h1,h2,h3,.poppins{
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================= HEADER ================= */
 .page-header{
+  margin-bottom:24px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  margin:20px 0;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
 .page-title{
-  font-size:1.6rem;
+  font-size:1.7rem;
   font-weight:800;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* ================= BUTTON ================= */
 .btn-primary{
   background:linear-gradient(135deg,var(--primary),var(--primary-m));
   color:#fff;
   border:none;
-  padding:8px 14px;
   border-radius:10px;
-  cursor:pointer;
+  padding:8px 16px;
+  font-family:'Poppins',sans-serif;
   font-weight:600;
+  cursor:pointer;
 }
 
-/* =========================
-   BOARD (TASK AREA)
-========================= */
+/* ================= BOARD ================= */
 .board{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
 }
 
-.col{
-  background:#fff;
-  border-radius:12px;
-  padding:14px;
-  min-height:300px;
-  box-shadow:var(--shadow);
-}
-
-/* =========================
-   TASK CARD
-========================= */
-.task-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:12px;
-  margin-bottom:10px;
-  box-shadow:var(--shadow);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media(max-width:1024px){
-  .board{
-    grid-template-columns:repeat(2,1fr);
-  }
+/* responsive board */
+@media(max-width:1200px){
+  .board{grid-template-columns:repeat(3,1fr);}
 }
 
 @media(max-width:768px){
-  .app-wrapper{
-    flex-direction:column;
-  }
-
   .app-sidebar{
-    width:100%;
-    min-height:auto;
+    width:220px;
   }
 
-  .board{
-    grid-template-columns:1fr;
+  .app-main{
+    margin-left:220px;
+    width:calc(100% - 220px);
   }
+
+  .app-header{
+    left:220px;
+  }
+
+  .board{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:540px){
+  .app-sidebar{
+    position:fixed;
+    left:-260px; /* hidden by default */
+  }
+
+  .app-main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .app-header{
+    left:0;
+  }
+
+  .board{grid-template-columns:1fr;}
+}
+
+/* ================= COLUMN ================= */
+.col{
+  background:#E8EBF4;
+  border-radius:14px;
+  padding:14px;
+  min-height:300px;
+}
+
+/* ================= TASK CARD ================= */
+.task-card{
+  background:#fff;
+  border-radius:11px;
+  padding:13px;
+  margin-bottom:9px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+/* title */
+.task-title{
+  font-weight:600;
+  font-family:'Poppins',sans-serif;
+  margin-bottom:5px;
+}
+
+/* desc */
+.task-desc{
+  font-size:.74rem;
+  color:var(--muted);
+}
+
+/* priority */
+.pb-high{background:#FEE2E2;color:#B91C1C}
+.pb-medium{background:#FEF3C7;color:#92400E}
+.pb-low{background:#D1FAE5;color:#065F46}
+
+/* ================= UTILITY FIX ================= */
+.container-fluid{
+  width:100%;
+  padding:0;
 }
