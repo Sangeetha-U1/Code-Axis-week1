@@ -108,13 +108,15 @@ body{
 }
 
 /* MAIN CONTENT */
+
 .app-main{
   margin-left:260px;
   margin-top:60px;
   padding:20px;
   width:calc(100% - 260px);
+  min-height:100vh;
+  overflow-x:hidden;
 }
-
 /* =========================
    HEADER
 ========================= */
@@ -145,11 +147,15 @@ body{
 /* =========================
    BOARD
 ========================= */
-
 .board{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4, minmax(0, 1fr));
   gap:16px;
+  width:100%;
+}
+.task-card{
+  width:100%;
+  word-wrap:break-word;
 }
 
 /* COLUMN */
