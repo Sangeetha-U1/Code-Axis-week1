@@ -1,10 +1,25 @@
 :root{
   --primary:#4F46E5;
   --primary-m:#6366F1;
+  --primary-l:#EEF2FF;
+
+  --success:#10B981;
+  --success-l:#D1FAE5;
+
+  --warning:#F59E0B;
+  --warning-l:#FEF3C7;
+
+  --danger:#EF4444;
+  --danger-l:#FEE2E2;
+
   --bg:#F0F2F8;
+  --card:#fff;
+  --border:#E8EAF0;
+
   --text:#0F172A;
   --muted:#64748B;
-  --border:#E8EAF0;
+  --muted-l:#94A3B8;
+
   --shadow:0 4px 16px rgba(15,23,42,.08);
 }
 
@@ -21,32 +36,28 @@ body{
   color:var(--text);
 }
 
-/* =======================
-   LAYOUT CORE FIX
-======================= */
+/* =========================
+   LAYOUT FIX
+========================= */
 
 .app-wrapper{
   display:flex;
   min-height:100vh;
 }
 
-/* =======================
-   SIDEBAR FIX (LEFT)
-======================= */
+/* SIDEBAR */
 .app-sidebar{
   position:fixed;
   top:0;
   left:0;
-  height:100vh;
   width:260px;
+  height:100vh;
   background:#111827;
   color:#fff;
   overflow-y:auto;
   z-index:1000;
-  transition:all .3s ease;
 }
 
-/* sidebar brand */
 .sidebar-brand{
   padding:16px;
   border-bottom:1px solid rgba(255,255,255,0.08);
@@ -56,22 +67,21 @@ body{
   display:flex;
   align-items:center;
   gap:10px;
-  text-decoration:none;
   color:#fff;
+  text-decoration:none;
 }
 
-/* sidebar menu */
 .sidebar-wrapper{
   padding:10px;
 }
 
 .sidebar-menu .nav-link{
-  color:#cbd5e1;
-  padding:10px 12px;
-  border-radius:8px;
   display:flex;
   align-items:center;
   gap:10px;
+  padding:10px 12px;
+  border-radius:8px;
+  color:#cbd5e1;
   text-decoration:none;
   transition:.2s;
 }
@@ -82,13 +92,11 @@ body{
   color:#fff;
 }
 
-/* =======================
-   NAVBAR FIX (TOP)
-======================= */
+/* NAVBAR */
 .app-header{
   position:fixed;
   top:0;
-  left:260px; /* same as sidebar width */
+  left:260px;
   right:0;
   height:60px;
   background:#fff;
@@ -99,19 +107,18 @@ body{
   z-index:999;
 }
 
-/* =======================
-   MAIN CONTENT FIX
-======================= */
+/* MAIN CONTENT */
 .app-main{
-  margin-left:260px; /* sidebar width */
-  margin-top:60px;   /* navbar height */
+  margin-left:260px;
+  margin-top:60px;
   padding:20px;
   width:calc(100% - 260px);
 }
 
-/* =======================
-   PAGE HEADER
-======================= */
+/* =========================
+   HEADER
+========================= */
+
 .page-header{
   display:flex;
   justify-content:space-between;
@@ -124,66 +131,185 @@ body{
   font-weight:700;
 }
 
-/* =======================
-   BOARD FIX
-======================= */
+/* BUTTON */
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary-m));
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* =========================
+   BOARD
+========================= */
+
 .board{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
 }
 
-/* responsive */
+/* COLUMN */
+.col{
+  background:#E8EBF4;
+  border-radius:14px;
+  padding:14px;
+  min-height:300px;
+}
+
+.col-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.col-label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-weight:700;
+  font-size:.82rem;
+}
+
+.col-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+}
+
+.col-count{
+  font-size:.67rem;
+  padding:2px 8px;
+  border-radius:999px;
+}
+
+.add-col-btn{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  color:var(--muted-l);
+}
+
+/* =========================
+   TASK CARD
+========================= */
+
+.task-card{
+  background:#fff;
+  border-radius:11px;
+  padding:13px;
+  margin-bottom:9px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  cursor:pointer;
+  position:relative;
+}
+
+.task-card:hover{
+  transform:translateY(-2px);
+}
+
+.task-card-accent{
+  position:absolute;
+  left:0;
+  top:0;
+  width:3px;
+  height:100%;
+}
+
+.task-title{
+  font-weight:600;
+  font-size:.85rem;
+  margin-bottom:5px;
+}
+
+.task-desc{
+  font-size:.74rem;
+  color:var(--muted);
+}
+
+/* TAG */
+.task-tag{
+  font-size:.62rem;
+  padding:2px 8px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* PRIORITY */
+.pb{
+  font-size:.61rem;
+  padding:2px 6px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+
+.pb-high{background:var(--danger-l);color:#B91C1C}
+.pb-medium{background:var(--warning-l);color:#92400E}
+.pb-low{background:var(--success-l);color:#065F46}
+
+/* FOOT */
+.task-foot{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+  padding-top:8px;
+  border-top:1px solid var(--border);
+}
+
+/* DUE */
+.due-chip{
+  font-size:.67rem;
+  color:var(--muted);
+}
+
+/* AVATAR */
+.avatar-stack{
+  display:flex;
+}
+
+.av{
+  width:20px;
+  height:20px;
+  border-radius:5px;
+  margin-left:-4px;
+  font-size:.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+
 @media(max-width:1200px){
   .board{grid-template-columns:repeat(3,1fr);}
 }
 
 @media(max-width:900px){
-  .app-sidebar{
-    width:220px;
-  }
-
-  .app-header{
-    left:220px;
-  }
-
+  .app-sidebar{width:220px;}
+  .app-header{left:220px;}
   .app-main{
     margin-left:220px;
     width:calc(100% - 220px);
   }
-
   .board{grid-template-columns:repeat(2,1fr);}
 }
 
 @media(max-width:600px){
-
-  .app-sidebar{
-    position:fixed;
-    left:-260px; /* hidden sidebar mobile */
-  }
-
-  .app-header{
-    left:0;
-  }
-
+  .app-sidebar{left:-260px;}
+  .app-header{left:0;}
   .app-main{
     margin-left:0;
     width:100%;
   }
-
-  .board{
-    grid-template-columns:1fr;
-  }
-}
-
-/* =======================
-   OPTIONAL UI CLEAN
-======================= */
-
-button{
-  cursor:pointer;
-}
-
-a{
-  text-decoration:none;
+  .board{grid-template-columns:1fr;}
 }
